@@ -1,0 +1,19 @@
+.news {
+  width: 40%;
+  padding: 2vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  background: rgba(222, 184, 135, 0.4);
+  border: 2px solid rgba(222, 184, 135);
+  margin: 0.5%;
+  margin-top: 0;
+  margin-bottom: 1%;
+  border-radius: 20px;
+}
+
+.news-title {
+  padding: 1%;
+  border-radius: 10px;
+  background: black;
+  color: white;
+}
