@@ -86,7 +86,7 @@ class App extends Component {
           }
         });
       },
-      popNews: () => {
+      popNews: async () => {
         this.setState({
           displayedNews: [],
         });
@@ -94,7 +94,7 @@ class App extends Component {
           News: [],
         });
 
-        fetch(`${this.state.URLs[this.state.urlId].link}`)
+        await fetch(`${this.state.URLs[this.state.urlId].link}`)
           .then((response) => response.json())
           .then((data) => {
             data.articles.forEach((article) => {
