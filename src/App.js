@@ -11,20 +11,6 @@ class App extends Component {
     this.state = {
       modelId: 0,
       modelActive: false,
-      showModel: async (e) => {
-        let id = -1;
-        if (e.target.className !== "news") {
-          id = e.target.parentElement.id;
-        } else {
-          id = e.target.id;
-        }
-        await this.setState({ modelId: id });
-        await this.setState({ modelActive: true });
-      },
-      hideModel: async () => {
-        await this.setState({ modelActive: false });
-        await this.setState({ modelId: -1 });
-      },
       urlId: 0,
       URLs: [
         {
@@ -46,6 +32,20 @@ class App extends Component {
       News: [],
       displayedNews: [],
       searchTitle: "",
+      showModel: async (e) => {
+        let id = -1;
+        if (e.target.className !== "news") {
+          id = e.target.parentElement.id;
+        } else {
+          id = e.target.id;
+        }
+        await this.setState({ modelId: id });
+        await this.setState({ modelActive: true });
+      },
+      hideModel: async () => {
+        await this.setState({ modelActive: false });
+        await this.setState({ modelId: -1 });
+      },
       changeURL: async (event) => {
         if (this.state.urlId !== event.target.value) {
           await this.setState({
