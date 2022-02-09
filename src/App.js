@@ -5,6 +5,8 @@ import Input from "./components/Input";
 import Categories from "./components/Categories";
 import Model from "./components/Model";
 
+const key = "e9504aa0b612423489fa8aec1e577871";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -16,17 +18,17 @@ class App extends Component {
         {
           id: 0,
           name: "Business in US",
-          link: `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=e9504aa0b612423489fa8aec1e577871`,
+          link: `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${key}`,
         },
         {
           id: 1,
           name: "TechCrunch",
-          link: `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=e9504aa0b612423489fa8aec1e577871`,
+          link: `https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${key}`,
         },
         {
           id: 2,
           name: "Wall Street Journal",
-          link: `https://newsapi.org/v2/everything?domains=wsj.com&apiKey=e9504aa0b612423489fa8aec1e577871`,
+          link: `https://newsapi.org/v2/everything?domains=wsj.com&apiKey=${key}`,
         },
       ],
       News: [],
@@ -94,7 +96,9 @@ class App extends Component {
           News: [],
         });
 
-        await fetch(`${this.state.URLs[this.state.urlId].link}`)
+        await fetch(`${this.state.URLs[this.state.urlId].link}`, {
+          Upgrade: "HTTP/2.0",
+        })
           .then((response) => response.json())
           .then((data) => {
             data.articles.forEach((article) => {
