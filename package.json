@@ -1,6 +1,6 @@
 {
   "name": "news_papper",
-  "homepage": "https://nasarkamish.github.io/NewsPaper",
+  "homepage": "https://nasarkamish.github.io/newspaper",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
